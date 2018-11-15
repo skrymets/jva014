@@ -53,4 +53,7 @@
             </plugins>
         </pluginManagement>
     </build>
+    <modules>
+        <module>playground</module>
+    </modules>
 </project>
