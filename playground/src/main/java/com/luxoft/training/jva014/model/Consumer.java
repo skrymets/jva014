@@ -23,4 +23,6 @@ import java.io.Serializable;
  */
 public class Consumer implements Serializable {
     
+    private static final long serialVersionUID = 1387643987461265024L;
+    
 }

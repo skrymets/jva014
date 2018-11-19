@@ -23,4 +23,6 @@ import java.io.Serializable;
  */
 public class Rent implements Serializable {
 
+    private static final long serialVersionUID = -2935163190070891312L;
+
 }

@@ -23,4 +23,6 @@ import java.io.Serializable;
  */
 public class ConsumableResource extends Resource implements Serializable {
 
+    private static final long serialVersionUID = -2996822251237728335L;
+
 }
