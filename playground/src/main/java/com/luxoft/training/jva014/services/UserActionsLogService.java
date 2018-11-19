@@ -15,7 +15,7 @@
  */
 package com.luxoft.training.jva014.services;
 
-import com.luxoft.training.jva014.model.UserActionLogRecord;
+import com.luxoft.training.jva014.model.vews.UserActionLogRecordView;
 import java.util.Map;
 
 /**
@@ -24,5 +24,5 @@ import java.util.Map;
  */
 public interface UserActionsLogService {
 
-    UserActionLogRecord recordUserAction(String ipAddress, int userId, Map<String, String> properties);
+    UserActionLogRecordView recordUserAction(String ipAddress, int userId, Map<String, String> properties);
 }
