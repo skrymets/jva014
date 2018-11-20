@@ -17,6 +17,7 @@ package com.luxoft.training.jva014.model;
 
 import com.luxoft.training.jva014.model.vews.UserActionLogRecordView;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +31,8 @@ public class UserActionLogRecord implements Serializable, UserActionLogRecordVie
 
     private static final long serialVersionUID = 8749025480681500215L;
 
+    private LocalDateTime logTime;
+
     private String ipAddress;
 
     private int userId;
@@ -37,6 +40,15 @@ public class UserActionLogRecord implements Serializable, UserActionLogRecordVie
     private Map<String, String> properties;
 
     public UserActionLogRecord() {
+    }
+
+    public void setLogTime(LocalDateTime logTime) {
+        this.logTime = logTime;
+    }
+
+    @Override
+    public LocalDateTime getLogTime() {
+        return logTime;
     }
 
     @Override
@@ -97,6 +109,11 @@ public class UserActionLogRecord implements Serializable, UserActionLogRecordVie
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "UserActionLogRecord{" + "logTime=" + logTime + ", ipAddress=" + ipAddress + ", userId=" + userId + ", properties=" + properties + '}';
     }
 
 }

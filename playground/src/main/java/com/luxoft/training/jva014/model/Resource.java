@@ -15,14 +15,45 @@
  */
 package com.luxoft.training.jva014.model;
 
+import com.luxoft.training.jva014.model.vews.ResourceView;
 import java.io.Serializable;
 
 /**
  *
  * @author skrymets
  */
-public class Resource implements Serializable {
+public abstract class Resource implements Serializable, ResourceView {
 
     private static final long serialVersionUID = 1114735898809056210L;
+
+    private String title;
+
+    private String code;
+
+    public Resource() {
+    }
+
+    public Resource(String title, String code) {
+        this.title = title;
+        this.code = code;
+    }
+
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @Override
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
 }

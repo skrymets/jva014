@@ -13,23 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.luxoft.training.jva014.model;
-
-import java.io.Serializable;
+package com.luxoft.training.jva014.model.vews;
 
 /**
  *
  * @author skrymets
  */
-public class ConsumableResource extends Resource implements Serializable {
+public interface ResourceView {
 
-    private static final long serialVersionUID = -2996822251237728335L;
+    String getCode();
 
-    public ConsumableResource() {
-    }
-
-    public ConsumableResource(String title, String code) {
-        super(title, code);
-    }
+    String getTitle();
 
 }

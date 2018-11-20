@@ -13,23 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.luxoft.training.jva014.model.vews;
+package com.luxoft.training.jva014.services.impl;
 
-import java.time.LocalDateTime;
+import com.luxoft.training.jva014.model.vews.UserActionLogRecordView;
+import com.luxoft.training.jva014.services.UserActionsLogService;
 import java.util.Map;
 
-/**
- *
- * @author skrymets
- */
-public interface UserActionLogRecordView {
 
-    String getIpAddress();
+public class UserActionsLogServiceImpl implements UserActionsLogService {
 
-    Map<String, String> getProperties();
-
-    int getUserId();
-
-    LocalDateTime getLogTime();
-
+    @Override
+    public UserActionLogRecordView recordUserAction(String ipAddress, int userId, Map<String, String> properties) {
+        return null;
+    }
+    
 }

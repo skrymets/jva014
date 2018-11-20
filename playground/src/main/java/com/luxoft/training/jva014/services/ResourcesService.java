@@ -19,7 +19,7 @@ import com.luxoft.training.jva014.model.ConsumableResource;
 import com.luxoft.training.jva014.model.InsufficientResourcesException;
 import com.luxoft.training.jva014.model.Rent;
 import com.luxoft.training.jva014.model.RentableResource;
-import com.luxoft.training.jva014.model.Resource;
+import com.luxoft.training.jva014.model.vews.ResourceView;
 import java.util.List;
 
 /**
@@ -34,7 +34,7 @@ public interface ResourcesService {
      * @return a list of resources. Never <code>null</code> - if there are no resources
      *         available - an empty list will be returned.
      */
-    List<Resource> listAllAvailableResources();
+    List<ResourceView> listAllAvailableResources();
 
     /**
      * Returns a list of consumable resources

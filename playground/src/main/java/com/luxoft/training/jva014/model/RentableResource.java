@@ -25,4 +25,11 @@ public class RentableResource extends Resource implements Serializable {
 
     private static final long serialVersionUID = -3666686221302678373L;
 
+    public RentableResource() {
+    }
+
+    public RentableResource(String title, String code) {
+        super(title, code);
+    }
+
 }
