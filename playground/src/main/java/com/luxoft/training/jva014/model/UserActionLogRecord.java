@@ -15,6 +15,7 @@
  */
 package com.luxoft.training.jva014.model;
 
+import com.luxoft.training.jva014.MapToStringConverter;
 import com.luxoft.training.jva014.model.vews.UserActionLogRecordView;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -22,24 +23,46 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import javax.persistence.Convert;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.SEQUENCE;
+import javax.persistence.Id;
 
 /**
  *
  * @author skrymets
  */
-public class UserActionLogRecord implements Serializable, UserActionLogRecordView {
+@Entity
+public class UserActionLogRecord implements UserActionLogRecordView, Serializable {
 
     private static final long serialVersionUID = 8749025480681500215L;
+
+    @Id
+    @GeneratedValue(
+            strategy = SEQUENCE,
+            generator = "JVA014_681d0980f383"
+    )
+    private Long id;
 
     private LocalDateTime logTime;
 
     private String ipAddress;
 
-    private int userId;
+    private String userName;
 
+    @Convert(converter = MapToStringConverter.class)
     private Map<String, String> properties;
 
     public UserActionLogRecord() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setLogTime(LocalDateTime logTime) {
@@ -61,12 +84,12 @@ public class UserActionLogRecord implements Serializable, UserActionLogRecordVie
     }
 
     @Override
-    public int getUserId() {
-        return userId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     @Override
@@ -82,7 +105,7 @@ public class UserActionLogRecord implements Serializable, UserActionLogRecordVie
     public int hashCode() {
         int hash = 3;
         hash = 79 * hash + Objects.hashCode(this.ipAddress);
-        hash = 79 * hash + this.userId;
+        hash = 79 * hash + Objects.hashCode(this.userName);
         hash = 79 * hash + Objects.hashCode(this.properties);
         return hash;
     }
@@ -99,7 +122,7 @@ public class UserActionLogRecord implements Serializable, UserActionLogRecordVie
             return false;
         }
         final UserActionLogRecord other = (UserActionLogRecord) obj;
-        if (this.userId != other.userId) {
+        if (!Objects.equals(this.userName, other.userName)) {
             return false;
         }
         if (!Objects.equals(this.ipAddress, other.ipAddress)) {
@@ -113,7 +136,6 @@ public class UserActionLogRecord implements Serializable, UserActionLogRecordVie
 
     @Override
     public String toString() {
-        return "UserActionLogRecord{" + "logTime=" + logTime + ", ipAddress=" + ipAddress + ", userId=" + userId + ", properties=" + properties + '}';
+        return "UserActionLogRecord{" + "logTime=" + logTime + ", ipAddress=" + ipAddress + ", userName=" + userName + ", properties=" + properties + '}';
     }
-
 }

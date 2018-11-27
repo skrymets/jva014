@@ -16,15 +16,23 @@
 package com.luxoft.training.jva014.services.impl;
 
 import com.luxoft.training.jva014.model.vews.UserActionLogRecordView;
+import com.luxoft.training.jva014.repositories.UserActionsLogRepository;
 import com.luxoft.training.jva014.services.UserActionsLogService;
 import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class UserActionsLogServiceImpl implements UserActionsLogService {
 
+    @Autowired
+    UserActionsLogRepository actionsLogRepository;
+
     @Override
-    public UserActionLogRecordView recordUserAction(String ipAddress, int userId, Map<String, String> properties) {
+    public UserActionLogRecordView recordUserAction(String ipAddress, String userName, Map<String, String> properties) {
+        
+        
         return null;
     }
-    
+
 }

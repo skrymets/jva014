@@ -24,12 +24,12 @@ import java.util.Map;
  */
 public interface UserActionLogRecordView {
 
+    LocalDateTime getLogTime();
+
+    String getUserName();
+
     String getIpAddress();
 
     Map<String, String> getProperties();
-
-    int getUserId();
-
-    LocalDateTime getLogTime();
 
 }

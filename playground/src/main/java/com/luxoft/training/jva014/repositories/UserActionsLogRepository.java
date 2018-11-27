@@ -13,16 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.luxoft.training.jva014.services;
+package com.luxoft.training.jva014.repositories;
 
-import com.luxoft.training.jva014.model.vews.UserActionLogRecordView;
-import java.util.Map;
+import com.luxoft.training.jva014.model.UserActionLogRecord;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author skrymets
  */
-public interface UserActionsLogService {
+@Repository
+public interface UserActionsLogRepository extends JpaRepository<UserActionLogRecord, Long> {
 
-    UserActionLogRecordView recordUserAction(String ipAddress, String userName, Map<String, String> properties);
 }
