@@ -16,10 +16,6 @@
         <!-- ************************************************************************* -->
         <!-- Spring-Boot Dependencies                                                  -->
         <!-- ************************************************************************* -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
         
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -31,6 +27,20 @@
         <!--                                                                           -->
         <!-- ************************************************************************* -->
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+
+        <!-- ************************************************************************* -->
+        <!--                                                                           -->
+        <!-- ************************************************************************* -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>javax.persistence-api</artifactId>
         </dependency>
@@ -38,6 +48,11 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-jpamodelgen</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
         </dependency>
         
         <!-- ************************************************************************* -->
@@ -49,9 +64,10 @@
         </dependency>
         
         
-        <!-- ************************************************************************* -->
-        <!--                                                                           -->
-        <!-- ************************************************************************* -->
+        <!-- ************************************************************************************** -->
+        <!-- Run the H2 DB Server first                                                             -->
+        <!-- java -cp ~/.m2/repository/com/h2database/h2/1.4.197/h2-1.4.197.jar org.h2.tools.Server -->
+        <!-- ************************************************************************************** -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
