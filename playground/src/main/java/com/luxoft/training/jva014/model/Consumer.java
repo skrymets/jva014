@@ -21,7 +21,7 @@ import java.io.Serializable;
  *
  * @author skrymets
  */
-public class Consumer implements Serializable {
+public class Consumer extends PersistentEntity implements Serializable {
     
     private static final long serialVersionUID = 1387643987461265024L;
     

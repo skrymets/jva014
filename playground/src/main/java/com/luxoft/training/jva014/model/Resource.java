@@ -17,12 +17,17 @@ package com.luxoft.training.jva014.model;
 
 import com.luxoft.training.jva014.model.vews.ResourceView;
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import static javax.persistence.InheritanceType.JOINED;
 
 /**
  *
  * @author skrymets
  */
-public abstract class Resource implements Serializable, ResourceView {
+@Entity
+@Inheritance(strategy = JOINED)
+public abstract class Resource extends PersistentEntity implements Serializable, ResourceView {
 
     private static final long serialVersionUID = 1114735898809056210L;
 
@@ -36,6 +41,11 @@ public abstract class Resource implements Serializable, ResourceView {
     public Resource(String title, String code) {
         this.title = title;
         this.code = code;
+    }
+
+    @Override
+    public long getId() {
+        return super.getId();
     }
 
     @Override

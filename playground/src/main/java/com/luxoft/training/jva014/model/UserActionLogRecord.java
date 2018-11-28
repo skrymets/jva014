@@ -15,7 +15,7 @@
  */
 package com.luxoft.training.jva014.model;
 
-import com.luxoft.training.jva014.MapToStringConverter;
+import com.luxoft.training.jva014.persistence.MapToStringConverter;
 import com.luxoft.training.jva014.model.vews.UserActionLogRecordView;
 import java.io.Serializable;
 import java.time.LocalDateTime;

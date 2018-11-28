@@ -21,6 +21,8 @@ package com.luxoft.training.jva014.model.vews;
  */
 public interface ResourceView {
 
+    long getId();
+
     String getCode();
 
     String getTitle();

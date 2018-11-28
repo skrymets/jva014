@@ -16,11 +16,13 @@
 package com.luxoft.training.jva014.model;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
 
 /**
  *
  * @author skrymets
  */
+@Entity
 public class ConsumableResource extends Resource implements Serializable {
 
     private static final long serialVersionUID = -2996822251237728335L;
