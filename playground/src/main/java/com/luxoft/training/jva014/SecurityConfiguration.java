@@ -47,7 +47,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         // PasswordEncoderFactories.createDelegatingPasswordEncoder();
         builder.inMemoryAuthentication()
-                .withUser(User.builder().username("admin").password("secret").roles(ROLE_SUPER).build())
+                .withUser(User.builder().username("admin").password("secret").roles(ROLE_SUPER, ROLE_USER, ROLE_GUEST).build())
                 .withUser(User.builder().username("guest").password("secret").roles(ROLE_GUEST).build())
                 .withUser(User.builder().username("employee").password("secret").roles(ROLE_USER).build())
                 .passwordEncoder(NoOpPasswordEncoder.getInstance());
@@ -57,14 +57,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         //super.configure(http);
         http.authorizeRequests()
+                .antMatchers("/inventory/**")
+                .authenticated()
+                //.hasAnyRole(ROLE_SUPER, ROLE_USER)
                 .antMatchers("/version*")
                 .permitAll()
-                .antMatchers("/inventory/**")
-                .hasAnyRole(ROLE_SUPER, ROLE_USER)
                 .antMatchers("/public/**")
                 .permitAll()
                 .and()
-                .httpBasic();
+                .httpBasic()
+                .and()
+                .formLogin()
+                .and()
+                .logout();
     }
 
 }
